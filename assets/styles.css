@@ -8,10 +8,6 @@
   font-family: "Jost";
 }
 
-body {
-  background-color: red;
-}
-
 .flexContainer {
   display: flex;
   justify-content: center;
@@ -34,7 +30,7 @@ nav {
 }
 
 .navLink {
-  transition: ease-in-out 0.5s;
+  transition: ease-in-out 0.3s;
 }
 .navLink:hover {
   font-size: 1.2em;
