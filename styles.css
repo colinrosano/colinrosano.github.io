@@ -50,3 +50,9 @@ a:focus {
   text-decoration: none;
   color: #fff;
 }
+
+.adElement {
+  background-color: red;
+  height: 100px;
+  width: 100px;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="frame-src 'self' unifiedconsent.osano.com"
+    />
+    <script
+      type="text/javascript"
+      src="https://s.uc.osano.com/sdk/latest.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript" crossorigin="anonymous">
+      const { UnifiedConsentByOsanoSDK } = window.unifiedConsentJsSdk;
+      if (window.navigator.globalPrivacyControl) {
+        UnifiedConsentByOsanoSDK.getToken({
+          issuer: "https://uc.api.osano.com/v2/token/create",
+          configId: "e0e9aaf8-4f49-4acd-b05b-0644d87b3884",
+          customerId: "AzZcpvRm9bbsqngN",
+        }).then((token) => {
+          UnifiedConsentByOsanoSDK.registerPrivacyProtocols({
+            apiUrl: "https://uc.api.osano.com/v2/",
+            token,
+          });
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>Your "Privacy" Choices</h1>
+      <p>This statement is false</p>
+      <main>
+        <iframe
+          id="osano-uc-iframe"
+          src="https://unifiedconsent.osano.com/1572/"
+        ></iframe>
+        <script type="text/javascript" crossorigin="anonymous">
+          window.unifiedConsentJsSdk.UnifiedConsentByOsanoSDK.initEmbeddedParent(
+            {
+              targetIframe: document.getElementById("osano-uc-iframe"),
+            }
+          );
+        </script>
+      </main>
+    </header>
+  </body>
+</html>
