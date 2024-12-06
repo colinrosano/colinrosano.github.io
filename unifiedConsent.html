@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="./styles.css" />
     <meta
       http-equiv="Content-Security-Policy"
       content="frame-src 'self' unifiedconsent.osano.com"
@@ -33,19 +34,17 @@
     <header>
       <h1>Your "Privacy" Choices</h1>
       <p>This statement is false</p>
-      <main>
-        <iframe
-          id="osano-uc-iframe"
-          src="https://unifiedconsent.osano.com/1572/"
-        ></iframe>
-        <script type="text/javascript" crossorigin="anonymous">
-          window.unifiedConsentJsSdk.UnifiedConsentByOsanoSDK.initEmbeddedParent(
-            {
-              targetIframe: document.getElementById("osano-uc-iframe"),
-            }
-          );
-        </script>
-      </main>
     </header>
+    <main>
+      <iframe
+        id="osano-uc-iframe"
+        src="https://unifiedconsent.osano.com/1572/"
+      ></iframe>
+      <script type="text/javascript" crossorigin="anonymous">
+        window.unifiedConsentJsSdk.UnifiedConsentByOsanoSDK.initEmbeddedParent({
+          targetIframe: document.getElementById("osano-uc-iframe"),
+        });
+      </script>
+    </main>
   </body>
 </html>
