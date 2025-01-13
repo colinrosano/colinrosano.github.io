@@ -54,16 +54,13 @@
           <li>Other things</li>
         </ul>
       </div>
-      <div id="cookie-display"></div>
     </main>
 
     <footer>
       <a href="#" onclick="Osano.cm.showDrawer('osano-cm-dom-info-dialog-open')"
         >Cookie Preferences</a
       >
-      <a href="#" onclick="Osano.cm.showDrawer('osano-cm-dom-info-dialog-open')"
-        >Verify Consent</a
-      >
+      <a class="verifyConsent" href="#">Verify Consent</a>
       <a href="./unifiedConsent.html">Your Privacy Choices</a>
       <a
         href="https://my.datasubject.com/AzZcpvRm9bbsqngN/45961"
@@ -72,5 +69,11 @@
         DSAR Form</a
       >
     </footer>
+    <div id="consentModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p id="consentUUID"></p>
+      </div>
+    </div>
   </body>
 </html>
