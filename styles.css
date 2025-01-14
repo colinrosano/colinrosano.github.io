@@ -104,3 +104,10 @@ a:focus {
   text-decoration: none;
   cursor: pointer;
 }
+
+.osano-cm-dialog__content::before {
+  content: "new content here\A ----- \A";
+  display: block;
+  color: red;
+  white-space: pre;
+}
