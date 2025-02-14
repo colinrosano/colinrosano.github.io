@@ -1,4 +1,4 @@
-// visitor-display.js
+// display modal with consent UUID on button click
 document.addEventListener("DOMContentLoaded", function () {
   const osano_consentmanager_uuid = localStorage.getItem(
     "osano_consentmanager_uuid"
@@ -24,3 +24,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 });
+
+// show cookie banner
+var cookieBannerLink = document.querySelector(".cookieBannerLink");
+
+cookieBannerLink.addEventListener("click", () => window.Osano.cm.showDialog());
