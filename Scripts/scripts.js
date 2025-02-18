@@ -29,3 +29,62 @@ document.addEventListener("DOMContentLoaded", function () {
 var cookieBannerLink = document.querySelector(".cookieBannerLink");
 
 cookieBannerLink.addEventListener("click", () => window.Osano.cm.showDialog());
+
+// async function getSubjectRightsRequests() {
+//   const response = await fetch(
+//     "https://api.osano.com/v1/subject-rights/requests",
+//     {
+//       method: "GET",
+//       headers: {
+//         Authorization: `Bearer ${osanoApiKey}`,
+//         "Content-Type": "application/json",
+//       },
+//     }
+//   );
+
+//   if (!response.ok) {
+//     throw new Error(`HTTP error! status: ${response.status}`);
+//   }
+
+//   const data = await response.json();
+//   return data;
+// }
+
+// // Example usage
+// getSubjectRightsRequests()
+//   .then((data) => console.log(data))
+//   .catch((error) => console.error("Error:", error));
+
+function promptForApiKeyAndFetchRequests() {
+  const userApiKey = prompt("Please enter your API key:");
+  if (userApiKey) {
+    getSubjectRightsRequestsWithKey(userApiKey)
+      .then((data) => console.log(data))
+      .catch((error) => console.error("Error:", error));
+  } else {
+    console.error("API key is required to fetch subject rights requests.");
+  }
+}
+
+async function getSubjectRightsRequestsWithKey(apiKey) {
+  const response = await fetch(
+    "https://api.osano.com/v1/subject-rights/requests",
+    {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        "Content-Type": "application/json",
+      },
+    }
+  );
+
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+
+  const data = await response.json();
+  return data;
+}
+
+// Example usage
+promptForApiKeyAndFetchRequests();
