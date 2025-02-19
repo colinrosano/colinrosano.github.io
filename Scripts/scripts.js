@@ -1,12 +1,13 @@
+const modal = document.getElementById("consentModal");
+// const span = document.getElementsByClassName("close")[0];
+const span = document.querySelector(".close");
+const consentUUID = document.getElementById("consentUUID");
+
 // display modal with consent UUID on button click
 document.addEventListener("DOMContentLoaded", function () {
   const osano_consentmanager_uuid = localStorage.getItem(
     "osano_consentmanager_uuid"
   );
-
-  const modal = document.getElementById("consentModal");
-  const span = document.getElementsByClassName("close")[0];
-  const consentUUID = document.getElementById("consentUUID");
 
   document.querySelector(".verifyConsent").onclick = function (event) {
     event.preventDefault();
@@ -29,3 +30,5 @@ document.addEventListener("DOMContentLoaded", function () {
 var cookieBannerLink = document.querySelector(".cookieBannerLink");
 
 cookieBannerLink.addEventListener("click", () => window.Osano.cm.showDialog());
+
+console.log(span);
