@@ -106,12 +106,8 @@ a:focus {
 }
 
 .osano-cm-dialog__content::before {
-  content: "new content here\A ----- \A";
+  content: "By closing this banner, you are agreeing to provide your consent\A ----- \A";
   display: block;
   color: red;
   white-space: pre;
-}
-
-.osano-cm-list-item:nth-child(2) {
-  display: none;
 }
