@@ -2,6 +2,7 @@ const modal = document.getElementById("consentModal");
 const span = document.querySelector(".close");
 const consentUUID = document.getElementById("consentUUID");
 var currentConsent = window.Osano.cm.getConsent();
+const bannerCloseButton = document.querySelector(".closeButton");
 
 // display modal with consent UUID on button click
 document.addEventListener("DOMContentLoaded", function () {
@@ -32,7 +33,9 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 });
 
-// show cookie banner
-var cookieBannerLink = document.querySelector(".cookieBannerLink");
-
-cookieBannerLink.addEventListener("click", () => window.Osano.cm.showDialog());
+// close cookie banner and hide button
+bannerCloseButton.addEventListener("click", () => {
+  document.querySelector(".osano-cm-accept").click();
+  window.Osano.cm.hideDialog();
+  bannerCloseButton.style.display = "none";
+});

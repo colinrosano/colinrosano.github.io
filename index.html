@@ -71,9 +71,12 @@
         </ul>
       </div>
     </main>
-
+    <button class="closeButton">X</button>
     <footer>
-      <a href="#" onclick="Osano.cm.showDrawer('osano-cm-dom-info-dialog-open')"
+      <a
+        href="#"
+        onclick="Osano.cm.showDrawer('osano-cm-dom-info-dialog-open');"
+      >
         >Cookie Preferences</a
       >
       <a class="verifyConsent" href="#">Verify Consent</a>
@@ -84,7 +87,12 @@
       >
         DSAR Form</a
       >
-      <a href="#" class="cookieBannerLink">Show Consent Banner</a>
+      <a
+        href="#"
+        class="cookieBannerLink"
+        onclick="Osano.cm.showDialog(), document.querySelector('.closeButton').style.display=''"
+        >Show Consent Banner</a
+      >
     </footer>
     <div id="consentModal" class="modal">
       <div class="modal-content">
