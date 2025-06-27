@@ -3,6 +3,7 @@ const span = document.querySelector(".close");
 const consentUUID = document.getElementById("consentUUID");
 var currentConsent = window.Osano.cm.getConsent();
 const bannerCloseButton = document.querySelector(".closeButton");
+const osanoAcceptButton = document.querySelector(".osano-cm-accept");
 
 // display modal with consent UUID on button click
 document.addEventListener("DOMContentLoaded", function () {
