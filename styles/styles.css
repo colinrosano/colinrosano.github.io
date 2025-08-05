@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: "montserrat", sans-serif;
+  font-weight: 250;
+  font-size: 55px;
+}
+
+.footer {
+  width: 100%;
+}
+
+.nav-bar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-link {
+  color: black;
+}
+
+/* Osano Styling */
+.osano-cm-dialog {
+  margin: 10px;
+  border-radius: 10px;
+}

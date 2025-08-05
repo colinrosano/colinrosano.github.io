@@ -1,1 +1,0 @@
-# colinrosano.github.io

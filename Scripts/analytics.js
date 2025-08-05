@@ -11,4 +11,4 @@ function setCookie(name, value, days) {
   document.cookie = `${name}=${value}; ${expires}; path=/; SameSite=Lax`;
 }
 
-setCookie("analyticsCookie", "someData", 365);
+setCookie("analyticsCookie", "analytical data", 365);

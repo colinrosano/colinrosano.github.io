@@ -3,75 +3,129 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My GitHub Pages Website</title>
-    <link rel="stylesheet" href="styles.css" />
-    <script src="https://cmp.osano.com/AzZcpvRm9bbsqngN/377df70f-4dd5-455d-b60e-3ff99a659c85/osano.js?variant=three"></script>
-    <script id="mcjs">
-      !(function (c, h, i, m, p) {
-        (m = c.createElement(h)),
-          (p = c.getElementsByTagName(h)[0]),
-          (m.async = 1),
-          (m.src = i),
-          p.parentNode.insertBefore(m, p);
-      })(
-        document,
-        "script",
-        "https://chimpstatic.com/mcjs-connected/js/users/4d5e3d1f53cfac961003e9d9e/3abdd2d52c3d8abf727c52981.js"
-      );
-    </script>
-    <script src="./Scripts/analytics.js"></script>
-    <script src="./Scripts/essential.js"></script>
-    <script src="./Scripts/marketing.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cmp.osano.com/osdemo-sales-3-inc/814898bf-1184-4ad4-b960-42880038bfe4/osano.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <script src="./scripts/analytics.js"></script>
+    <script src="./scripts/essential.js"></script>
+    <script src="./scripts/marketing.js"></script>
+    <title>Document</title>
   </head>
   <body>
-    <header>
-      <h1>Welcome to My Website</h1>
+    <header class="header d-flex align-items-center">
+      <nav class="nav-bar header-nav d-flex align-items-center p-4">
+        <button type="button" class="btn btn-transparent">
+          <img class="menu-icon" src="./assets/menu.svg" alt="menu-icon" />
+        </button>
+        <h1 class="page-heading">Welcome</h1>
+        <button type="button" class="btn btn-transparent" id="themeToggle">
+          <img
+            class="dark-mode-moon"
+            src="./assets/moon_icon.svg"
+            alt="dark-mode-moon"
+          />
+          <img
+            class="dark-mode-sun"
+            src="./assets/sun_icon.svg"
+            alt="dark-mode-sun"
+          />
+        </button>
+      </nav>
     </header>
     <main>
-      <div class="content">
-        <h2>About Me</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Omnis,
-          ratione natus laudantium veniam explicabo. Veritatis quasi dolorum,
-          quibusdam tempore veniam dignissimos.
-        </p>
-        <h2>My Interests</h2>
-        <ul style="list-style-position: inside">
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
+      <!-- consent modal -->
+      <div
+        class="modal fade"
+        tabindex="-1"
+        aria-labeledby="modal-title"
+        aria-hidden="true"
+        id="consent-modal"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modal-title">Consent Verification</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+                onclick="document.querySelector('.copyAlert').style.display='none'"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p class="modal-body-content">
+                To verify your consent, please contact us at privacy@company.com
+                and provide us with your consent UUID. <br />
+                <br />
+                Your consent UUID is:
+              </p>
+              <p class="consent-id-content"></p>
+            </div>
+            <div class="modal-footer">
+              <div
+                class="copyAlert alert alert-success"
+                style="display: none"
+              ></div>
+              <button type="button" class="btn btn-primary copy-button">
+                Copy
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
+      <!-- end consent modal -->
     </main>
-    <button class="closeButton">X</button>
-    <footer>
-      <a
-        href="#"
-        onclick="Osano.cm.showDrawer('osano-cm-dom-info-dialog-open');"
-      >
-        Cookie Preferences</a
-      >
-      <a class="verifyConsent" href="#">Verify Consent</a>
-      <a href="./unifiedConsent.html">Your Privacy Choices</a>
-      <a
-        href="https://my.datasubject.com/AzZcpvRm9bbsqngN/47889"
-        target="_blank"
-      >
-        DSAR Form</a
-      >
-      <a
-        href="#"
-        class="cookieBannerLink"
-        onclick="Osano.cm.showDialog(), document.querySelector('.closeButton').style.display=''"
-        >Show Consent Banner</a
-      >
+    <footer class="footer d-flex align-items-center position-absolute bottom-0">
+      <nav class="nav-bar footer-nav d-flex align-items-center p-5">
+        <a
+          href="./dsarForm.html"
+          class="footer-link link-underline link-underline-opacity-0"
+          >Subject Rights Request</a
+        >
+        <a href="#" class="footer-link link-underline link-underline-opacity-0"
+          >Your Privacy Choices</a
+        >
+        <button
+          type="button"
+          class="btn btn-transparent"
+          onclick="Osano.cm.showDrawer()"
+        >
+          Cookie Preferences
+        </button>
+        <button
+          type="button"
+          data-bs-toggle="modal"
+          data-bs-target="#consent-modal"
+          class="btn btn-transparent verifyConsent"
+        >
+          Verify Consent
+        </button>
+        <button
+          type="button"
+          class="btn btn-transparent"
+          onclick="Osano.cm.showDialog()"
+        >
+          Show Consent Banner
+        </button>
+      </nav>
     </footer>
-    <div id="consentModal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <p id="consentUUID"></p>
-      </div>
-    </div>
-    <script src="./Scripts/scripts.js"></script>
+    <script src="./scripts/script.js"></script>
   </body>
 </html>
