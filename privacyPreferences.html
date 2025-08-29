@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Preferences</title>
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="frame-src 'self' unifiedconsent.osano.com"
+    />
+    <script
+      type="text/javascript"
+      src="https://s.uc.osano.com/sdk/latest.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript" crossorigin="anonymous">
+      const { UnifiedConsentByOsanoSDK } = window.unifiedConsentJsSdk;
+      if (window.navigator.globalPrivacyControl) {
+        UnifiedConsentByOsanoSDK.getToken({
+          issuer: "https://uc.api.osano.com/v2/token/create",
+          configId: "d280f743-1e0b-48a9-9ca5-b799ed297e6b",
+          customerId: "osdemosales3inc",
+        }).then((token) => {
+          UnifiedConsentByOsanoSDK.registerPrivacyProtocols({
+            apiUrl: "https://uc.api.osano.com/v2/",
+            token,
+          });
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <iframe
+      id="osano-uc-iframe"
+      src="https://unifiedconsent.osano.com/4404/"
+    ></iframe>
+    <script type="text/javascript" crossorigin="anonymous">
+      window.unifiedConsentJsSdk.UnifiedConsentByOsanoSDK.initEmbeddedParent({
+        targetIframe: document.getElementById("osano-uc-iframe"),
+      });
+    </script>
+  </body>
+</html>
