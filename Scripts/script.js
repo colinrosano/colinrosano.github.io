@@ -20,4 +20,16 @@ const copyConsentId = () => {
   copyAlert.innerHTML = "✅ Copied!";
 };
 
+// new consent log
+Osano.cm.addEventListener("osano-cm-consent-new", (consent) => {
+  console.log("New consent:", consent);
+});
+Osano.cm.addEventListener("osano-cm-consent-changed", (change) =>
+  console.log("Category toggled:", JSON.stringify(change))
+);
+
+Osano.cm.addEventListener("osano-cm-consent-saved", (consent) => {
+  console.log("Consent saved:", consent);
+});
+
 copyButton.addEventListener("click", copyConsentId);
